@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Message board</title>
+
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<div id="title">Message Board</div>
+	<a href="/new">click here to say something!</a><br>
+{{#each messages as |m|}}
+<div class="card">
+{{ m.text }} <br>
+{{ m.user }} <br>
+{{ m.added }} <br>
+</div>
+{{/each}}
+</body>
+</html>
