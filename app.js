@@ -2,7 +2,11 @@ var express = require('express');
 var path = require('path');
  
 const app = express();
-const port = 8080;
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 const messages = [
    {
      text: "Hi there!",
@@ -38,5 +42,5 @@ app.post("/new",(req,res)=>{
 	res.redirect("/");
 });
 app.listen(port,()=>{
-	console.log("server succesfully started");
+	console.log(`server succesfully started ${port}`);
 });
